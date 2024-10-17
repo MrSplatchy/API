@@ -1,0 +1,32 @@
+# Ignore les dossiers de l'environnement virtuel
+venv/
+.env/
+
+# Ignore les fichiers de configuration locaux
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.log
+
+# Ignore les fichiers de contrôle de version
+.git
+.gitignore
+.gitattributes
+
+# Ignore les fichiers spécifiques à l'IDE
+.vscode/
+.idea/
+
+# Ignore les fichiers de test et de documentation
+tests/
+docs/
+
+# Ignore les fichiers de configuration pour déploiement local
+*.yaml
+*.yml
+docker-compose.yml
+
+# Autres fichiers inutiles
+.DS_Store
+*.sqlite3
