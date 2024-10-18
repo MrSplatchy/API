@@ -9,10 +9,6 @@ venv/
 __pycache__/
 *.log
 
-# Ignore les fichiers de contrôle de version
-.git
-.gitignore
-.gitattributes
 
 # Ignore les fichiers spécifiques à l'IDE
 .vscode/
