@@ -1,13 +1,16 @@
 FROM python:3.12
 
 # Définir le répertoire de travail dans le conteneur
-WORKDIR /code
+WORKDIR /app
 
 # Copier les fichiers de l'application dans le répertoire de travail
-COPY . .
+COPY requirements.txt .
 
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Copier les autres fichiers
+COPY . .
 
 # Exposer le port sur lequel l'application écoute (par exemple 8000)
 EXPOSE 8000
