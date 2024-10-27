@@ -6,7 +6,10 @@ from PIL import Image
 from app.model.model import classify_image  # Assurez-vous que ce chemin est correct
 import os
 
-app = FastAPI()
+app = FastAPI(
+    docs_url=None,       # Désactive Swagger UI
+    redoc_url=None       # Désactive Redoc
+)
 
 # Configurer Jinja2 templates
 templates = Jinja2Templates(directory="app/templates")
