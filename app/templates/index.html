@@ -2,42 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Classifier</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/styles.css?v=1.0">  <!-- Ajout d'un paramètre de version -->
-</head>
+    <link rel="stylesheet" href="/static/styles.css?v=1.0"> <!-- Paramètre de version pour cache -->
 <body>
-    <h1>Upload an Image for Classification</h1>
-    <form class="large-form" action="/predict" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" required>
-        <button type="submit">Predict</button>
-    </form>
-    <p class="about">
-        This is a simple image classifier using a pre-trained model trained on the CIFAR-10 dataset.<br>
-        You can upload an image and see the predicted class.
-        <br> It can recognize:<br>
-    </p>
-    <p class="cifar">
-        - Airplane<br>
-        - Automobile<br>
-        - Bird<br>
-        - Cat<br>
-        - Deer<br>
-        - Dog<br>
-        - Frog<br>
-        - Horse<br>
-        - Ship<br>
-        - Truck<br>
-        <br><strong>
-            Note that this is a simple model and may not always be accurate (It's trash). -Splatchy
-        </strong>          
-   
-    </p>
-</body>
-<footer>
-    <p>© 2024 Image Classifier</p>
-    <a href="https://github.com/MrSplatchy/Project-API" target="_blank">Source Code  </a>
-    <a href="https://www.youtube.com/@Mr.Splatchy" target="_blank">  My Channel</a>
+    <header>
+        <h1>Upload an Image for Classification</h1>
+    </header>
 
-</footer>
+    <main>
+        <form class="large-form" action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        <section class="about">
+            <p>
+                This is a simple image classifier using a pre-trained model on the CIFAR-10 dataset.<br>
+                You can upload an image and see the predicted class.
+            </p>
+            <p>It can recognize:</p>
+            <ul class="cifar">
+                <li>Airplane</li>
+                <li>Automobile</li>
+                <li>Bird</li>
+                <li>Cat</li>
+                <li>Deer</li>
+                <li>Dog</li>
+                <li>Frog</li>
+                <li>Horse</li>
+                <li>Ship</li>
+                <li>Truck</li>
+            </ul>
+            <p><strong>Note that this is a simple model and may not always be accurate (It's trash). -Splatchy</strong></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Image Classifier</p>
+        <nav>
+            <a href="https://github.com/MrSplatchy/Project-API" target="_blank">Source Code</a>
+            <a href="https://www.youtube.com/@Mr.Splatchy" target="_blank">My Channel</a>
+        </nav>
+    </footer>
+
+    <!-- Script pour afficher un message d'erreur si le serveur envoie un paramètre "error" -->
+</body>
 </html>

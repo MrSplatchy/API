@@ -1,8 +1,8 @@
-from fastapi import FastAPI, File, UploadFile, Request
+from fastapi import FastAPI, File, UploadFile, Request, HTTPException
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 from app.model.model import classify_image  # Assurez-vous que ce chemin est correct
 import os
 
@@ -31,8 +31,20 @@ async def favicon():
 
 @app.post("/predict")
 async def predict_image(request: Request, image: UploadFile = File(...)):
-    img = Image.open(image.file)
-    prediction = classify_image(img)
-    return templates.TemplateResponse("predict.html", {"request": request, "prediction": prediction})
+    # Vérification du type MIME pour s'assurer que c'est bien une image
+    if not image.content_type.startswith("image/"):
+        # Redirige vers la page d'erreur avec un message
+        return RedirectResponse(url="/error?message=This isn't a image, try again", status_code=303)
 
+    try:
+        # Tenter d'ouvrir l'image
+        img = Image.open(image.file)
+        prediction = classify_image(img)
+        return templates.TemplateResponse("predict.html", {"request": request, "prediction": prediction})
+    except UnidentifiedImageError:
+        # Redirige vers la page d'erreur avec un message
+        return RedirectResponse(url="/error?message=Corrupted.", status_code=303)
 
+@app.get("/error")
+def error_page(request: Request, message: str):
+    return templates.TemplateResponse("error.html", {"request": request, "error_message": message})
