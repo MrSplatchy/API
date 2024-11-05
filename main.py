@@ -1,9 +1,10 @@
-from fastapi import FastAPI, File, UploadFile, Request, HTTPException
+from fastapi import FastAPI, File, UploadFile, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image, UnidentifiedImageError
-from app.model.model import classify_image  # Assurez-vous que ce chemin est correct
+# Assurez-vous que ce chemin est correct
+from app.model.model import classify_image
 import os
 
 app = FastAPI(
@@ -17,17 +18,21 @@ templates = Jinja2Templates(directory="app/templates")
 # Monter le dossier static pour servir les fichiers CSS et autres fichiers statiques
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
+
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+
 @app.get("/favicon.ico")
 async def favicon():
-    file_path = os.path.join(os.path.dirname(__file__), "static", "favicon.ico")
+    file_path = os.path.join(os.path.dirname(
+        __file__), "static", "favicon.ico")
     if os.path.exists(file_path):
         return FileResponse(file_path)
     else:
         return {"error": "Favicon not found"}
+
 
 @app.post("/predict")
 async def predict_image(request: Request, image: UploadFile = File(...)):
@@ -44,6 +49,7 @@ async def predict_image(request: Request, image: UploadFile = File(...)):
     except UnidentifiedImageError:
         # Redirige vers la page d'erreur avec un message
         return RedirectResponse(url="/error?message=Corrupted.", status_code=303)
+
 
 @app.get("/error")
 def error_page(request: Request, message: str):
