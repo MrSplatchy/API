@@ -5,36 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page avec Header Disparaissant</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/styles-index.css?v=1.0"> <!-- Paramètre de version pour cache -->
+    <link rel="stylesheet" href="/static/styles-header.css"> <!-- Paramètre de version pour cache -->
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-
-    <header id="header">
-        Ceci est un en-tête
+    <header>
+        <nav id="header">
+            <a href="/" class="title">Splatchy's Projects</a>
+                <div class="top-links">
+                    <a href="/about" class="nav-link">About Us</a>
+                    <a href="/" class="nav-link">Home</a>
+        </nav>
     </header>
+    <!-- Contenu de la page -->
+    <main>
+        <h1>Welcome to my Projects</h1>
 
-    <div class="content">
-        <button onclick="toggleHeader()">Masquer/Montrer l'en-tête</button>
-        <p>Voici du contenu de la page...</p>
-    </div>
+        <div class="form-container">
+            <form class="large-form" action="/cifar10" method="get">
+                <h1 class="title-box">Cifar10</h1>
+                <p class="description">A trained AI classifying 10 types of images.</p>
+                <button type="submit" class="action-btn">Try it now</button>
+            </form>
 
-<footer>
-    <p>© 2024 Image Classifier</p>
-    <nav>
-        <a href="https://github.com/MrSplatchy/Project-API" target="_blank">Source Code</a>
-        <a href="https://www.youtube.com/@Mr.Splatchy" target="_blank">My Channel</a>
-    </nav>
-</footer>
-
-
-
-    <script>
-        function toggleHeader() {
-            const header = document.getElementById('header');
-            header.classList.toggle('hidden');
-        }
-    </script>
-
+            <form class="large-form" action="/" method="get">
+                <h1 class="title-box">new PROJECT Coming soon!</h1>
+                <button type="submit" class="action-btn">Idk why u will click here</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Image Classifier</p>
+        <nav>
+            <a href="https://github.com/MrSplatchy/Project-API" target="_blank">Source Code</a>
+            <a href="https://www.youtube.com/@Mr.Splatchy" target="_blank">My Channel</a>
+        </nav>
+    </footer>
 
 </body>
+
 </html>

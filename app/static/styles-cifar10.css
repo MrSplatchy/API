@@ -1,0 +1,134 @@
+main{
+    margin-top: 0%; /* Enlève les marges par défaut */
+    height: 100vh; /* Définit la hauteur pour couvrir tout l'écran */
+    background: linear-gradient(0deg,  #1c1c1c,#020202); 
+    /* Dégradé de bleu (#1e90ff) à rose (#ff69b4) en diagonale */
+    font-family: Arial, sans-serif; /* Police par défaut pour le texte */
+}
+
+#pred{
+    text-align:center;
+    color :white;
+    font-size: 30px;   
+}
+
+#pred a{
+    color : #0011ff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out; /* Transition de la couleur en 0.3s */
+}
+
+#pred a:hover{
+    color: rgb(0, 76, 255); /* Change la couleur du texte au survol */
+}
+
+
+/* Style pour le titre */
+h1{
+    font-size: 38px;
+    color: white;
+    text-align: center; 
+    margin: 0%;
+    padding: 3%
+}
+
+.error{
+    font-size: 24px;
+    color: white;
+    text-align: center; 
+    margin: 0%;
+    padding: 3%
+}
+
+/* Styles combinés pour le formulaire et le bouton */
+.button-center {
+    width: 80%; /* Largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    padding: 20px; /* Rembourrage interne */
+    background-color: #181818; /* Fond léger pour démarquer */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(255, 249, 249, 0.1); /* Ombre subtile */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+}
+
+.button-center input[type="file"] {
+    width: 100%; /* Rend l'élément aussi large que le formulaire */
+    padding: 12px; /* Rembourrage interne de 12px pour agrandir */
+    margin-top: 10px; /* Espace de 10px au-dessus de l'élément */
+    border: 2px solid #000dfd; /* Bordure de 2px pour le démarquer */
+    border-radius: 5px; /* Coins arrondis pour un effet doux */
+    font-size: 16px; /* Augmente la taille de la police */
+    background-color: #000000; /* Fond blanc */
+    cursor: pointer; /* Change le curseur en main lorsqu'on passe dessus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre subtile pour la profondeur */
+    transition: border-color 0.3s; /* Transition douce pour les changements de bordure */
+    color:azure;
+}
+
+.button-center input[type="file"]:hover {
+    border-color: rgb(0, 76, 255); /* Change la couleur de la bordure au survol */
+}
+
+.button-center input[name="image"]{
+   padding-left: 12 px;
+}
+
+.button-center button {
+    width: 100%; /* Largeur complète du bouton */
+    padding: 10px; /* Rembourrage interne */
+    background-color: #2600ff; /* Couleur de fond bleue */
+    color: #000000; /* Couleur du texte */
+    border: none; /* Enlève la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    margin-top: 15px; /* Espace au-dessus du bouton */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Transition douce */
+}
+
+.button-center button:hover {
+    background-color: #0040ff; /* Couleur de fond au survol */
+}
+
+
+.about{
+    color:aliceblue;
+    font-family: sans-serif;
+}
+
+#desc{
+    text-align: center;
+    font-size: 24px;
+}
+
+#cifar{
+    text-align: center;
+}
+
+footer{
+    margin: 0%; /* Supprime complètement les marges */
+    margin-left: 0%;
+    background-color: #1c1c1c; /* Couleur de fond sombre */
+    color: whitesmoke; /* Couleur du texte pour le contraste */
+    display: flex; /* Active la mise en page flex */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 20px; /* Ajoute un rembourrage pour l'espace */
+    border: none; /* Supprime la bordure (si présente) */
+    outline: none; 
+    font-size: 20px;
+}
+
+/* Styles pour les liens dans le footer */
+footer nav a {
+    color: whitesmoke; /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement */
+    margin-left: 15px; /* Espace entre les liens */
+    transition: color 0.3s; /* Transition douce pour les changements de couleur */
+}
+
+footer nav a:hover {
+    color: #3498db; /* Change la couleur des liens au survol */
+}

@@ -1,0 +1,66 @@
+body{
+    margin: 0%;
+}
+
+
+/* Flexbox pour l'ensemble du header */
+#header {
+    position: fixed; /* Rendre le header fixe */
+    top: 0;          /* Garde le header en haut de la page */
+    left: 0;         /* Aligne le header à gauche */
+    width: 96%;     /* Occupe toute la largeur de la page */
+    display: flex;   /* Active Flexbox pour le layout */
+    justify-content: space-between; /* Espace entre le titre et les liens */
+    align-items: center;  /* Centrage vertical des éléments */
+    padding: 25px 20px;   /* Ajoute de l'espace autour du contenu */
+    background-color: #000000;  /* Couleur de fond noire */
+    z-index: 1000;     /* Assure que le header reste au-dessus du contenu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
+}
+
+/* Si tu veux ajouter un peu de marge en haut du contenu, 
+   tu peux appliquer un padding au body ou à la section principale pour éviter que le header n'empiète sur le contenu */
+body {
+    padding-top: 80px; /* Ajuste la hauteur selon la taille de ton header */
+}
+
+
+
+/* Title styling */
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;    /* Remove underline */
+    color: #ffffff;              /* Text color */
+    background-color: #000000;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transition de la couleur du texte et du fond */
+
+}
+
+.title:hover {
+    color: #0004ff;           /* Nouvelle couleur du texte (par exemple, bleu clair) */
+}
+
+
+/* Flexbox for the links */
+.top-links {
+    display: flex;            /* Flex layout for links */
+    gap: 20px;                /* Space between each link */
+}
+
+/* Styling the links */
+.nav-link {
+    text-decoration: none;    /* Remove underline */
+    color: #ffffff;              /* Text color */
+    font-size: 18px;          /* Adjust font size */
+    background-color: #000000;
+}
+
+/* Optional: Add hover effect for links */
+.nav-link:hover {
+    color: #007bff;       /* Change text color on hover */
+}
+
+
+
+

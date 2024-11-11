@@ -5,40 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Classifier</title>
     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/styles.css?v=1.0"> <!-- Paramètre de version pour cache -->
-<body>
-    <header>
-        <h1>Upload an Image for Classification</h1>
-    </header>
+    <link rel="stylesheet" href="/static/styles-header.css">
+    <link rel="stylesheet" href="/static/styles-cifar10.css"> <!-- Paramètre de version pour cache -->
+</head>
 
+<header>
+
+    <nav id="header">
+        <a href="/" class="title">Splatchy's Projects</a>
+            <div class="top-links">
+                <a href="/about" class="nav-link">About Us</a>
+                <a href="/" class="nav-link">Home</a>
+    </nav>
+</header>
+<body>  
     <main>
-        <form class="large-form" action="/predict" method="post" enctype="multipart/form-data">
+        <h1>Upload an Image for Classification</h1>
+        <form class="button-center" action="/cifar10/predict" method="post" enctype="multipart/form-data">
             <input type="file" name="image" required>
             <button type="submit">Predict</button>
         </form>
 
         <section class="about">
-            <p>
+            <p id="desc">
                 This is a simple image classifier using a pre-trained model on the CIFAR-10 dataset.<br>
-                You can upload an image and see the predicted class.
+                You can upload an image and see the predicted class.<br>
+                It can recognize 10 objet/animal such as:<br><br>
+                Airplane, Automobile, Bird, Cat, Deer, Dog, Frog, Horse, Ship, Truck
             </p>
-            <p>It can recognize:</p>
-            <ul class="cifar">
-                <li>Airplane</li>
-                <li>Automobile</li>
-                <li>Bird</li>
-                <li>Cat</li>
-                <li>Deer</li>
-                <li>Dog</li>
-                <li>Frog</li>
-                <li>Horse</li>
-                <li>Ship</li>
-                <li>Truck</li>
-            </ul>
-            <p><strong>Note that this is a simple model and may not always be accurate (It's trash). -Splatchy</strong></p>
+            <p id="desc"><strong>pls Note that this is a simple model and may not always be accurate (It's trash). -Splatchy</strong></p>
+
         </section>
-    </main>
+
+ 
     
+    </main>
     <footer>
         <p>© 2024 Image Classifier</p>
         <nav>
@@ -46,7 +47,8 @@
             <a href="https://www.youtube.com/@Mr.Splatchy" target="_blank">My Channel</a>
         </nav>
     </footer>
-
+    
+ 
     <!-- Script pour afficher un message d'erreur si le serveur envoie un paramètre "error" -->
 </body>
 </html>

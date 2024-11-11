@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-    <meta charset="UTF-8">
-    <title>Prediction Result</title>
-    <link rel="icon" href="/static/favicon.ico" type="image">
-    <link rel="stylesheet" href="/static/styles.css">
+      <meta charset="UTF-8">
+      <title>Prediction Result</title>
+      <link rel="icon" href="/static/favicon.ico" type="image">
+      <link rel="stylesheet" href="/static/styles-cifar10.css">
   <!-- Ajout d'un paramètre de version -->
 </head>
 <body>
-    <h1>Prediction Result</h1>
-    <p>The predicted class is: <strong>{{ prediction }}</strong></p> 
-    <a href="/">Go back</a>
+    <header>
+        <link rel="stylesheet" href="/static/styles-header.css">
+        <nav id="header">
+          <a href="/" class="title">Splatchy's Projects</a>
+          <div class="top-links">
+              <a href="/about" class="nav-link">About Us</a>
+                <a href="/" class="nav-link">Home</a>
+        </nav>
+    </header>
+    <main>
+      <section id="pred">
+        <!-- Affichage du résultat de la prédiction -->
+        <h1>Prediction Result</h1>
+        <p>The predicted class is: <strong>{{ prediction }}</strong></p> 
+        <a href="/cifar10">Go back</a>
+      </section>
+    </main>
 </body>
 </html>

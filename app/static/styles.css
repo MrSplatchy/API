@@ -1,78 +1,88 @@
-/* Forcer le rechargement */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h1{
+    font-size: 38px;
+    color: white;
+    text-align: center; 
+    margin: 0%;
+    padding: 3%
 }
 
-.about {
-    margin-top: 5%;
-    font-size: 22px;
-    text-align: left;
-    
+
+main{
+    margin-top: 0%; /* Enlève les marges par défaut */
+    height: 100vh; /* Définit la hauteur pour couvrir tout l'écran */
+    background: linear-gradient(0deg,  #1c1c1c,#020202); 
+    /* Dégradé de bleu (#1e90ff) à rose (#ff69b4) en diagonale */
+    font-family: Arial, sans-serif; /* Police par défaut pour le texte */
 }
 
-.cifar {
-    margin-bottom: 5%;
-    font-size: 22px;
-    text-align: left;
-
+footer{
+    margin: 0%; /* Supprime complètement les marges */
+    margin-left: 0%;
+    background-color: #1c1c1c; /* Couleur de fond sombre */
+    color: whitesmoke; /* Couleur du texte pour le contraste */
+    display: flex; /* Active la mise en page flex */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 20px; /* Ajoute un rembourrage pour l'espace */
+    border: none; /* Supprime la bordure (si présente) */
+    outline: none; 
+    font-size: 20px;
 }
-h1 {
-    color: #333;
-    text-align: center;
+
+/* Conteneur pour aligner les formulaires */
+.form-container {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre les formulaires horizontalement */
+    gap: 20px; /* Espace entre les formulaires */
+    padding: 20px; /* Ajoute du rembourrage autour */
 }
 
+/* Container pour centrer le contenu */
 .large-form {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Largeur du contenu */
+    max-width: 400px; /* Limite la largeur du conteneur */
+    margin: 50px auto; /* Centre le contenu horizontalement et ajoute de l'espace vertical */
+    padding: 20px; /* Rembourrage interne */
+    background-color: #181818; /* Couleur de fond sombre */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour la profondeur */
+    display: flex; /* Utilisation de Flexbox */
+    flex-direction: column; /* Alignement vertical */
+    justify-content: center; /* Centrage vertical */
+    align-items: center; /* Centrage horizontal */
 }
 
-.large-form input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: large;
+/* Style du titre */
+.title-box{
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff; /* Couleur du texte */
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 10px; /* Marge en bas du titre */
+    background-color: #181818;
 }
 
-.large-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    cursor: pointer;
+/* Style du paragraphe */
+.description {
+    font-size: 16px;
+    color: #bbbbbb; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    margin-bottom: 20px; /* Marge en bas du paragraphe */
 }
 
-.large-form button:hover {
-    background-color: #2980b9;
+/* Style du bouton */
+.action-btn {
+    width: 100%; /* Largeur complète du bouton */
+    padding: 12px; /* Rembourrage interne */
+    background-color: #2600ff; /* Couleur de fond bleue */
+    color: white; /* Couleur du texte */
+    border: none; /* Enlève la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s ease; /* Transition douce pour la couleur de fond */
 }
 
-
-footer {
-    text-align: left;  /* Aligne le texte à droite */
-    margin-top: 10%;  /* Ajoute un espace au-dessus du footer */
-    font-size: 16px;    /* Taille de police pour le footer */
-    color: #555;        /* Couleur du texte */
+/* Effet de survol pour le bouton */
+.action-btn:hover {
+    background-color: #000ead; /* Change la couleur de fond du bouton au survol */
 }
-
-a {
-    color: #007BFF; /* Couleur du lien */
-    text-decoration: none; /* Enlève le soulignement */
-    margin-right: 10px; /* Ajoute un espace de 10 pixels autour du lien */
-}
-
-a:hover {
-    text-decoration: underline; /* Souligne le lien au survol */
-    color: #0051ff;
-}
-
