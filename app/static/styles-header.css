@@ -1,5 +1,5 @@
 body{
-    margin: 0%;
+    margin: 0;
 }
 
 
@@ -8,11 +8,11 @@ body{
     position: fixed; /* Rendre le header fixe */
     top: 0;          /* Garde le header en haut de la page */
     left: 0;         /* Aligne le header à gauche */
-    width: 90%;     /* Occupe toute la largeur de la page */
+    width: 93%;     /* Occupe toute la largeur de la page */
     display: flex;   /* Active Flexbox pour le layout */
     justify-content: space-between; /* Espace entre le titre et les liens */
     align-items: center;  /* Centrage vertical des éléments */
-    padding: 27px 5%;   /* Ajoute de l'espace autour du contenu */
+    padding: 27px 5% 27px 3%; /* Seulement 10px de padding à gauche */
     background-color: #000000;  /* Couleur de fond noire */
     z-index: 1000;     /* Assure que le header reste au-dessus du contenu */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
@@ -28,13 +28,15 @@ body {
 
 /* Title styling */
 .title {
-    font-size: 26px;
+    font-size: 25px;
     font-weight: bold;
     text-decoration: none;    /* Remove underline */
     color: #ffffff;              /* Text color */
     background-color: #000000;
     transition: color 0.3s ease, background-color 0.3s ease; /* Transition de la couleur du texte et du fond */
     font-family: sans-serif;
+    padding-top: -1%; /* Ajoute un espace de 10px à gauche */
+    padding-left: -0.5%;   
 }
 
 .title:hover {

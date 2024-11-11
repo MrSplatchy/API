@@ -4,6 +4,7 @@ main{
     background: linear-gradient(0deg,  #1c1c1c,#020202); 
     /* Dégradé de bleu (#1e90ff) à rose (#ff69b4) en diagonale */
     font-family: Arial, sans-serif; /* Police par défaut pour le texte */
+    padding-top: 1vh;
 }
 
 #pred{
@@ -30,7 +31,7 @@ h1{
     text-align: center; 
     margin: 0%;
     padding-top: 35px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 
 .error{
