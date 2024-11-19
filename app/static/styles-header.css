@@ -8,7 +8,7 @@ body {
     position: fixed; /* Rendre le header fixe */
     top: 0;          /* Garde le header en haut de la page */
     left: 0;         /* Aligne le header à gauche */
-    width: 100%;     /* Occupe toute la largeur de la page */
+    width: 95vw;     /* Occupe toute la largeur de la page */
     display: flex;   /* Active Flexbox pour le layout */
     justify-content: space-between; /* Espace entre le titre et les liens */
     align-items: center;  /* Centrage vertical des éléments */
