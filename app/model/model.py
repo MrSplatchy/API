@@ -32,24 +32,38 @@ def classify_image(img):
     
     # Charger le modèle
     if os.path.exists(model_path):
-        net.load_state_dict(torch.load(model_path))
+        net.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+        print("Modèle chargé")
     else:
         raise FileNotFoundError(f"Le fichier de modèle n'a pas été trouvé : {model_path}")
     
-    classes = ['plane', 'car', 'bird','cat' ,'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+    classes = ['avion', 'automobile', 'oiseau', 'chat', 'cerf', 'chien', 'grenouille', 'cheval', 'bateau', 'camion']
+    
+    # Assurez-vous que l'image est en mode RGB
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
     
     # Transformations de l'image
     transform = transforms.Compose([
-        transforms.Resize((32, 32)), 
+        transforms.Resize((32, 32)),
         transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
     
-    img = transform(img)  # Appliquer les transformations
-    img = img.unsqueeze(0)  # Ajouter une dimension pour le batch
+    # Appliquer les transformations
+    img_tensor = transform(img)
+    
+    # Ajouter une dimension pour le batch
+    img_tensor = img_tensor.unsqueeze(0)
+    
+    # Passer en mode évaluation
     net.eval()
+    
     with torch.no_grad():
-        output = net(img)
+        output = net(img_tensor)
         _, predicted = torch.max(output, 1)
     
-    return classes[predicted.item()]
+    prediction = classes[predicted.item()]
+    print(f"L'image est classifiée comme : {prediction}")
+    
+    return prediction

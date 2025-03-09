@@ -6,7 +6,10 @@ from PIL import Image, UnidentifiedImageError
 # Assurez-vous que ce chemin est correct
 from app.model.model import classify_image
 import os
+
+
 import time
+import io
 
 app = FastAPI(
     docs_url=None,       # Désactive Swagger UI
@@ -45,17 +48,25 @@ async def predict_image(request: Request, image: UploadFile = File(...)):
     # Vérification du type MIME pour s'assurer que c'est bien une image
     if not image.content_type.startswith("image/"):
         # Redirige vers la page d'erreur avec un message
-        return RedirectResponse(url="/cifar10/error?message=This isn't a image, try again", status_code=303)
+        return RedirectResponse(url="/cifar10/error?message=Ce n'est pas une image, veuillez réessayer", status_code=303)
 
-    try:
-        # Tenter d'ouvrir l'image
-        img = Image.open(image.file)
+    try: 
+        # Lire le contenu du fichier
+        contents = await image.read()
+
+        # Ouvrir l'image à partir des contenus
+        img = Image.open(io.BytesIO(contents))
+
+        # Vérifier l'image
         img.verify()
+
+        # Réinitialiser le pointeur du fichier
+        img = Image.open(io.BytesIO(contents))
         prediction = classify_image(img)
         return templates.TemplateResponse("predict.html", {"request": request, "prediction": prediction})
-    except UnidentifiedImageError:
+    except Exception as e:
         # Redirige vers la page d'erreur avec un message
-        return RedirectResponse(url="/cifar10/error?message=Corrupted.", status_code=303)
+        return RedirectResponse(url=f"/cifar10/error?message=Erreur lors du traitement de l'image: {str(e)}", status_code=303)
 
 
 @app.get("/cifar10/error")
